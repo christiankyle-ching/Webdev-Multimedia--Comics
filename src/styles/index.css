@@ -1,3 +1,7 @@
+.section-1 {
+  height: 100vh;
+}
+
 #homeSwiper {
   height: 100%;
   width: 100%;
@@ -5,4 +9,6 @@
 
 #homeSwiper .swiper-slide img {
   filter: blur(2px) brightness(0.5);
+
+  width: 100%;
 }
