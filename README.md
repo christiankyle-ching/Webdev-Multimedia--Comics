@@ -28,4 +28,5 @@ You can code changes to this repository. Basic knowledge of Git commands is requ
     - `git checkout -b new-branch-name`
 3. Once done, commit all staged changes, then push it to origin (this remote repository).
     - `git push -u origin new-branch-name`
-4. Wait for your code changes to be merged to `main`.
+4. Then, on github, Create a Pull Request on your branch.
+5. Wait for your code changes to be merged to `main`.
