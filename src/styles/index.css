@@ -1,0 +1,8 @@
+#homeSwiper {
+  height: 100%;
+  width: 100%;
+}
+
+#homeSwiper .swiper-slide img {
+  filter: blur(2px) brightness(0.5);
+}
