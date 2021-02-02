@@ -1,0 +1,7 @@
+.pagination-item {
+  @apply text-black border-purple-700 border-2 py-2 px-3 rounded-sm ring-inset ring-purple-500 hover:ring-4 transition-shadow transition-colors cursor-pointer;
+}
+
+.pagination-item.selected {
+  @apply bg-purple-700 text-white;
+}

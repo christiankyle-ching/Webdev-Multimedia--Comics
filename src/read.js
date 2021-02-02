@@ -1,43 +1,47 @@
+import "./styles/global.css";
+import "./styles/tailwind.css";
+import "./styles/read.css";
+
+import "./components/sidebar";
+
 import comicAssets from "./assets/comics/*.*";
 
+import "swiper/swiper-bundle.min.css";
+import Swiper, { Pagination } from "swiper";
+Swiper.use([Pagination]);
 
-// References
-const currentPageImage = document.querySelector(".current-page");
-const pageNumbersContainer = document.querySelector(".page-numbers");
+// Initialize Swiper Slides
+const slideContainer = document.querySelector("#comicViewer .swiper-wrapper");
+const preloader = document.createElement('div')
+preloader.classList.add('swiper-lazy-preloader')
 
-
-// Helper Functions
-const createPageSelectorElement = (imgSrc, n) => {
-  const pageEl = document.createElement("button");
-  pageEl.innerText = n;
-  pageEl.dataset.imgSrc = imgSrc;
-  return pageEl;
-};
-
-const highlightPageNumber = (el) => {
-    pageSelectors.forEach((e) => e.classList.remove('selected'))
-    el.classList.add('selected')
-}
-
-const onPageClick = (event, imgSrc) => {
-highlightPageNumber(event.target)
-  currentPageImage.src = imgSrc;
-};
-
-
-// Initialize Page Numbers & Image Links
 Object.values(comicAssets).forEach((obj, index) => {
-    
   const imageSrc = obj[Object.keys(obj)[0]];
-  pageNumbersContainer.appendChild(
-    createPageSelectorElement(imageSrc, index + 1)
-  );
+
+  const slideEl = document.createElement("div");
+  slideEl.classList.add("swiper-slide");
+
+  const imgEl = document.createElement("img");
+  imgEl.loading = 'lazy'
+  imgEl.src = imageSrc;
+  imgEl.alt = "Page " + (index + 1);
+
+  slideEl.appendChild(preloader.cloneNode());
+  slideEl.appendChild(imgEl);
+
+  slideContainer.appendChild(slideEl);
 });
 
-// Initialize Click Event Listeners
-const pageSelectors = document.querySelectorAll("[data-img-src]");
-pageSelectors.forEach((el) => 
-  el.addEventListener("click", (e) => onPageClick(e, el.dataset.imgSrc))
-);
-
-if (pageSelectors.length > 0) pageSelectors[0].click()
+const comicViewer = new Swiper("#comicViewer", {
+  allowTouchMove: false,
+  autoplay: false,
+  pagination: {
+    el: "#comicViewer .swiper-pagination",
+    bulletClass: "pagination-item",
+    bulletActiveClass: "selected",
+    clickable: true,
+    renderBullet(index, className) {
+      return `<span class="${className}">${index + 1}</span>`;
+    },
+  },
+});

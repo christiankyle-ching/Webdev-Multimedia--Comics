@@ -12,7 +12,8 @@
     - `Shift + Right-Click` inside the folder, then select `Open in Visual Studio Code`
     - Or, open a terminal inside the folder, then enter `code .`
 4. Open the terminal inside VSCode with `ctrl + ~`
-5. Run `npm start` (Make sure NodeJS is installed, which comes with NPM)
+5. Run `npm install` to install the required packages
+6. Run `npm start` (Make sure NodeJS is installed, which comes with NPM)
     - This can also be done using the default OS terminal
-6. Open the local server link provided. Default: `localhost:1234`
-7. Change code inside the `src` folder (such as HTMLs, CSSs, and Javascripts), and the browser should automatically reload to preview changes.
+7. Open the local server link provided. Default: `localhost:1234`
+8. Change code inside the `src` folder (such as HTMLs, CSSs, and Javascripts), and the browser should automatically reload to preview changes.

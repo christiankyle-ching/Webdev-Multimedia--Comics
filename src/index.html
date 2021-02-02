@@ -5,18 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StyleCode Comics</title>
 
-    <link
-      rel="stylesheet"
-      href="../node_modules/swiper/swiper-bundle.min.css"
-    />
-
-    <link rel="stylesheet" href="./styles/tailwind.css" />
-    <link rel="stylesheet" href="./styles/global.css" />
-    <link rel="stylesheet" href="./styles/index.css" />
   </head>
 
   <body>
-    <!-- Navbar -->
+    <!-- Navbar : Copy this to other pages -->
     <nav class="flex p-4 bg-white shadow-2xl items-center relative z-10">
       <!-- Menu -->
       <button
@@ -46,12 +38,12 @@
 
       <!-- Nav Links -->
       <ul class="ml-auto md:space-x-5 text-center">
-        <li class="inline-block hidden md:inline">
-          <a href="#" class="">Home</a>
+        <li class="hidden md:inline">
+          <a href="./index.html" class="">Home</a>
         </li>
 
-        <li class="inline-block hidden md:inline">
-          <a href="#" class="">About</a>
+        <li class="hidden md:inline">
+          <a href="./about.html" class="">About</a>
         </li>
 
         <li
@@ -86,12 +78,17 @@
           </a>
           <ul class="flex flex-col items-stretch pt-5">
             <li>
-              <a href="#" class="px-7 py-5 block sweep-to-right">
+              <a href="./index.html" class="px-7 py-5 block sweep-to-right">
                 <h4>Home</h4>
               </a>
             </li>
             <li>
-              <a href="#" class="px-7 py-5 block sweep-to-right">
+              <a href="./read.html" class="px-7 py-5 block sweep-to-right">
+                <h4>Start Reading</h4>
+              </a>
+            </li>
+            <li>
+              <a href="./about.html" class="px-7 py-5 block sweep-to-right">
                 <h4>About</h4>
               </a>
             </li>
@@ -154,7 +151,7 @@
       </div>
     </div>
 
-    <!-- SECTION 2 - Characters -->
+    <!-- TODO: SECTION 2 - Characters -->
     <div class="section-2 container my-10 mx-auto">
       <h1 class="text-center">Discover the Lore of the Characters</h1>
 
@@ -167,8 +164,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="../node_modules/swiper/swiper-bundle.min.js"></script>
     <script src="./index.js"></script>
-    <script src="./components/sidebar.js"></script>
   </body>
 </html>

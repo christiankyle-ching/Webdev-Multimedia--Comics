@@ -1,3 +1,5 @@
+import "./sidebar.css";
+
 // Helper Functions
 const closeSidebar = (element) => {
     element.classList.remove('active');
