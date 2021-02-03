@@ -17,19 +17,34 @@
   object-position: center;
 }
 
-#characterSwiper {
-  position: relative;
+#characterSwiper .swiper-wrapper {
+  min-height: 60vmin;
 }
 
-.bg-parallax {
+#characterSwiper .swiper-slide {
+  /* Fix for grid not occupying 100% of height */
+  height: unset !important;
+}
+
+#characterSwiper .bg-parallax {
   position: absolute;
   left: 0;
   top: 0;
   width: 130%;
   height: 100%;
 
-  background-size: cover;
-  background-position: right;
+  filter: brightness(0.5);
 
-  filter: brightness(0.5)
+  background-image: url('../assets/characters/bg-character.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: top;
+  overflow: visible;
 }
