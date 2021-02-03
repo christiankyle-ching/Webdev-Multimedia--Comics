@@ -7,6 +7,22 @@
   --sidebar-link-bg: ;
 }
 
+/* Scrollbar */
+body {
+  overflow: overlay;
+}
+::-webkit-scrollbar {
+  width: auto;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: rgba(109, 40, 217);
+  background-clip: content-box;
+  border: 5px rgba(0, 0, 0, 0) solid;
+}
+
+
 /* #region UTILS & FIXES */
 .absolute-fill {
   position: absolute;
@@ -18,6 +34,14 @@
 
 .swiper-lazy-preloader {
   z-index: -1 !important;
+}
+
+.swiper-wrapper:hover {
+  cursor: grab;
+}
+
+.swiper-wrapper:active {
+  cursor: grabbing;
 }
 /* #endregion */
 

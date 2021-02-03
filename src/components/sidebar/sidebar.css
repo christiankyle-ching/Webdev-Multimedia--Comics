@@ -10,6 +10,9 @@
   overflow: hidden;
 
   visibility: hidden;
+}
+
+.transition-visibility {
   transition: visibility var(--sidebar-animation-duration) ease-in-out;
 }
 

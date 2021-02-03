@@ -55,22 +55,22 @@ const characterSwiperSlideContainer = document.querySelector(
 );
 
 const slideTemplate = document.createElement("div");
-slideTemplate.classList.add("swiper-slide", "grid", "grid-cols-2");
+slideTemplate.classList.add("swiper-slide", "grid", "grid-cols-2", "md:grid-cols-3", "md:px-20");
 
 const characterImg = document.createElement("img");
 characterImg.classList.add("character-image", "col-span-1");
 
 const colContent = document.createElement("div");
-colContent.classList.add("col-span-1", "p-4", "sm:p-10", "text-white");
+colContent.classList.add("col-span-1", "md:col-span-2", "p-4", "sm:p-10", "text-white");
 
-const characterNameEl = document.createElement("h3");
-characterNameEl.classList.add("character-name", "text-lg", "md:text-2xl");
-const characterSubtitleEl = document.createElement("h5");
+const characterNameEl = document.createElement("h2");
+characterNameEl.classList.add("character-name", "text-2xl", "md:text-4xl");
+const characterSubtitleEl = document.createElement("h4");
 characterSubtitleEl.classList.add(
   "character-subtitle",
   "pt-1",
-  "text-base",
-  "md:text-lg"
+  "text-lg",
+  "md:text-2xl"
 );
 const characterDescriptionEl = document.createElement("p");
 characterDescriptionEl.classList.add(
@@ -80,10 +80,10 @@ characterDescriptionEl.classList.add(
   "md:text-base"
 );
 
-characterNameEl.dataset.swiperParallax = "-100%";
-characterSubtitleEl.dataset.swiperParallax = "-75%";
 characterDescriptionEl.dataset.swiperParallax = "-50%";
-characterImg.dataset.swiperParallax = "-25%";
+characterSubtitleEl.dataset.swiperParallax = "-100%";
+characterNameEl.dataset.swiperParallax = "-150%";
+characterImg.dataset.swiperParallax = "-200%";
 
 colContent.appendChild(characterNameEl);
 colContent.appendChild(characterSubtitleEl);
@@ -107,4 +107,9 @@ characters.forEach((c) => {
 const characterSwiper = new Swiper("#characterSwiper", {
   direction: "horizontal",
   parallax: true,
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: true,
+  },
+  loop: true,
 });

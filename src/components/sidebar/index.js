@@ -22,3 +22,9 @@ const closeButtons = document.querySelectorAll('.sidebar .sidebar-close-btn')
 for (const btn of closeButtons) {
     btn.addEventListener("click", () => closeSidebar(btn.parentElement.parentElement))
 }
+
+const sidebars = document.querySelectorAll('.sidebar')
+window.addEventListener("load", () => {
+    sidebars.forEach(e => e.classList.add('transition-visibility'))
+})
+
