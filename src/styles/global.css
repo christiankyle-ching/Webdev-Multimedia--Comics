@@ -4,7 +4,7 @@
 }
 :root {
   --sidebar-animation-duration: 500ms;
-  --sidebar-link-bg: 
+  --sidebar-link-bg: ;
 }
 
 /* #region UTILS & FIXES */
@@ -52,5 +52,10 @@
 
 .sweep-to-right:hover::before {
   transform: scaleX(1);
+}
+
+/* Background Image */
+.transition-bg-image {
+  transition: background-image 500ms ease-in-out;
 }
 /* #endregion */

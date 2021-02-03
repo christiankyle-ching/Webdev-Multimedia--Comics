@@ -1,11 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <!-- Navbar : Copy this to other pages -->
+    <nav class="flex p-4 bg-white shadow-2xl items-center relative z-10">
+      <!-- Menu -->
+      <button
+        class="mr-3 p-1 inline-block md:hidden"
+        data-sidebar-target="navbarSide"
+      >
+        <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h7"
+          />
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <a href="./index.html">
+        <h3 class="text-gray-900 inline">StyleCode</h3>
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="ml-auto md:space-x-5 text-center">
+        <li class="hidden md:inline">
+          <a href="./index.html" class="">Home</a>
+        </li>
+
+        <li class="hidden md:inline">
+          <a href="./about.html" class="">About</a>
+        </li>
+
+        <li
+          class="inline-block bg-purple-800 hover:bg-purple-900 text-white rounded-lg p-2 transition-colors"
+        >
+          <a href="./read.html">Start Reading!</a>
+        </li>
+      </ul>
+
+      <!-- Sidebar -->
+      <div id="navbarSide" class="sidebar">
+        <div class="sidebar-backdrop"></div>
+        <div class="sidebar-content shadow-2xl">
+          <button class="sidebar-close-btn p-7">
+            <svg
+              class="w-8 h-8"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <a href="./index.html">
+            <h2 class="p-7">StyleCode</h2>
+          </a>
+          <ul class="flex flex-col items-stretch pt-5">
+            <li>
+              <a href="./index.html" class="px-7 py-5 block sweep-to-right">
+                <h4>Home</h4>
+              </a>
+            </li>
+            <li>
+              <a href="./read.html" class="px-7 py-5 block sweep-to-right">
+                <h4>Start Reading</h4>
+              </a>
+            </li>
+            <li>
+              <a href="./about.html" class="px-7 py-5 block sweep-to-right">
+                <h4>About</h4>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="relative h-60">
+      <div class="w-full h-full absolute inset-0 overflow-hidden">
+        <img
+          src="./assets/comics/1.jpg"
+          alt=""
+          class="object-center object-cover image-darken"
+        />
+      </div>
+      <div
+        class="relative flex w-full h-full items-center justify-center flex-col text-white"
+      >
+        <h1>About StyleCode</h1>
+        <h5 class="pt-3 font-light">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, iusto!
+        </h5>
+      </div>
+    </div>
+
+    <div class="container mx-auto pt-10 text-center">
+      <h2>Who We Are</h2>
+      <p class="pt-3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, iusto.
+        Odit perferendis animi voluptatem commodi facere neque veniam itaque
+        nesciunt.
+      </p>
+    </div>
+
+    <script src="./about.js"></script>
+  </body>
 </html>

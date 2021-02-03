@@ -1,0 +1,5 @@
+.image-darken {
+  filter: blur(2px) brightness(0.5);
+  width: 110%;
+  height: 110%;
+}
