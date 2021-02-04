@@ -4,10 +4,16 @@ import "./styles/index.css";
 
 import "./components/sidebar";
 
-import Swiper, { Autoplay, Navigation, Parallax } from "swiper";
+import Swiper, {
+  Autoplay,
+  Navigation,
+  Parallax,
+  EffectCoverflow,
+} from "swiper";
 import "swiper/swiper-bundle.min.css";
+import "swiper/swiper-bundle";
 
-Swiper.use([Autoplay, Parallax]);
+Swiper.use([Autoplay, Navigation, Parallax, EffectCoverflow]);
 
 const homeSwiper = new Swiper("#homeSwiper", {
   direction: "horizontal",
@@ -55,13 +61,25 @@ const characterSwiperSlideContainer = document.querySelector(
 );
 
 const slideTemplate = document.createElement("div");
-slideTemplate.classList.add("swiper-slide", "grid", "grid-cols-2", "md:grid-cols-3", "md:px-20");
+slideTemplate.classList.add(
+  "swiper-slide",
+  "grid",
+  "grid-cols-2",
+  "md:grid-cols-3",
+  "md:px-20"
+);
 
 const characterImg = document.createElement("img");
 characterImg.classList.add("character-image", "col-span-1");
 
 const colContent = document.createElement("div");
-colContent.classList.add("col-span-1", "md:col-span-2", "p-4", "sm:p-10", "text-white");
+colContent.classList.add(
+  "col-span-1",
+  "md:col-span-2",
+  "p-4",
+  "sm:p-10",
+  "text-white"
+);
 
 const characterNameEl = document.createElement("h2");
 characterNameEl.classList.add("character-name", "text-2xl", "md:text-4xl");
@@ -106,10 +124,30 @@ characters.forEach((c) => {
 
 const characterSwiper = new Swiper("#characterSwiper", {
   direction: "horizontal",
+  grabCursor: true,
   parallax: true,
   autoplay: {
     delay: 10000,
     disableOnInteraction: true,
   },
   loop: true,
+});
+
+// INIT SETTING SWIPER
+const settingSwiper = new Swiper("#settingSwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  navigation: {
+    nextEl: "#settingSwiper .swiper-button-next",
+    prevEl: "#settingSwiper .swiper-button-prev",
+  }
 });

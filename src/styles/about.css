@@ -3,3 +3,15 @@
   width: 110%;
   height: 110%;
 }
+
+.member {
+  @apply col-span-1 shadow-2xl border-2 border-gray-300 rounded-2xl p-5 m-5;
+}
+
+.member-name {
+  @apply pt-5 text-center sm:text-left;
+}
+
+.member-image {
+  @apply rounded-full h-48 w-48 object-cover object-top mx-auto ring-4 ring-purple-400 shadow-xl;
+}

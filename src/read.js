@@ -42,7 +42,23 @@ const comicViewer = new Swiper("#comicViewer", {
     bulletActiveClass: "selected",
     clickable: true,
     renderBullet(index, className) {
-      return `<span class="${className}">${index + 1}</span>`;
+      return `<span class="inline-block ${className}">${index + 1}</span>`;
     },
   },
 });
+
+// Assign Page Numbers
+const currentPage = document.querySelector('.current');
+const totalPages = document.querySelector('.total');
+
+currentPage.innerText = 1
+totalPages.innerText = Object.keys(comicAssets).length
+
+// Event Listener - onSlideChange
+comicViewer.on("slideChange", (swiper) => {
+  currentPage.innerText = swiper.activeIndex + 1
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+})

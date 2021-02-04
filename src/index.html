@@ -8,7 +8,7 @@
 
   <body>
     <!-- Navbar : Copy this to other pages -->
-    <nav class="flex p-4 bg-white shadow-2xl items-center relative z-10">
+    <nav>
       <!-- Menu -->
       <button
         class="mr-3 p-1 inline-block md:hidden"
@@ -46,7 +46,7 @@
         </li>
 
         <li
-          class="inline-block bg-purple-800 hover:bg-purple-900 text-white rounded-lg p-2 transition-colors"
+          class="inline-block bg-purple-800 hover:bg-purple-900 text-white rounded-lg px-3 py-2 transition-colors"
         >
           <a href="./read.html">Start Reading!</a>
         </li>
@@ -117,8 +117,8 @@
       <div class="flex absolute-fill z-10">
         <div class="m-auto text-white text-center">
           <div class="container px-5">
-            <h1>Start Reading</h1>
-            <p class="mt-5">
+            <h1>[TITLE]</h1>
+            <p class="mt-5 md:text-lg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
               optio quibusdam voluptate cupiditate beatae porro eaque qui iste!
               Reiciendis, maiores.
@@ -162,10 +162,59 @@
       </div>
     </div>
 
-    <!-- TODO: SECTION 2 - Characters -->
+    <!-- TODO: SECTION 3 - Setting -->
     <div class="section-3 container pb-20">
-      <h1 class="text-center">Discover What Happened in [SETTING]</h1>
+      <h1 class="text-center pb-20">Discover What Happened in [SETTING]</h1>
+
+      <div class="grid grid-cols-2">
+        <div class="col-span-2 md:col-span-1">
+          <!-- Column Setting Image Gallery -->
+          <div id="settingSwiper" class="swiper-container">
+            <div class="swiper-wrapper">
+              <!-- Place Background images used in comics as Setting -->
+              <div
+                class="swiper-slide"
+                style="background-image: url('./assets/setting/1.jpg')"
+              ></div>
+              <div
+                class="swiper-slide"
+                style="background-image: url('./assets/setting/2.jpg')"
+              ></div>
+              <div
+                class="swiper-slide"
+                style="background-image: url('./assets/setting/3.jpg')"
+              ></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <!-- Column Description -->
+        <div class="col-span-2 md:col-span-1 text-center md:text-left p-10">
+          <h2 class="pb-5">Name of Place</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo
+            quaerat quisquam amet aspernatur perferendis, officiis voluptate
+            quas? Laudantium ipsam vel voluptate dolorem exercitationem laborum
+            et deserunt, sunt sapiente asperiores. Modi sapiente quae veritatis
+            nobis deleniti adipisci eveniet molestias temporibus, excepturi
+            rerum distinctio, facilis magni, repellendus mollitia enim illo
+            soluta similique quisquam consectetur. Sapiente magnam incidunt,
+            officia perspiciatis provident quod.
+          </p>
+        </div>
+      </div>
     </div>
+
+    <!-- Footer : Copy this to other pages -->
+    <footer class="bg-indigo-900 text-gray-300 text-center p-10">
+      <h3>StyleCode</h3>
+      <ul class="pt-3 md:flex md:items-center md:justify-center md:space-x-5">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+      </ul>
+      <p class="pt-10 font-light text-xs">&copy; StyleCode 2021</p>
+    </footer>
 
     <!-- Scripts -->
     <script src="./index.js"></script>

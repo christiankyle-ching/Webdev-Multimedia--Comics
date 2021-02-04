@@ -2,6 +2,8 @@
   height: 100vh;
 }
 
+/* Home Swiper */
+
 #homeSwiper {
   height: 100%;
   width: 100%;
@@ -17,6 +19,7 @@
   object-position: center;
 }
 
+/* Character Swiper */
 #characterSwiper .swiper-slide {
   height: unset !important;
 }
@@ -43,4 +46,14 @@
   background-image: url("../assets/characters/bg-character.png");
   background-position: center;
   background-size: cover;
+}
+
+/* Setting Swiper */
+#settingSwiper .swiper-slide {
+  width: 60vmin;
+  height: 60vmin;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

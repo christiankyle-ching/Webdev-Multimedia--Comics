@@ -7,7 +7,7 @@
   </head>
   <body>
     <!-- Navbar : Copy this to other pages -->
-    <nav class="flex p-4 bg-white shadow-2xl items-center relative z-10">
+    <nav>
       <!-- Menu -->
       <button
         class="mr-3 p-1 inline-block md:hidden"
@@ -105,14 +105,21 @@
       </div>
 
       <div id="comicViewer" class="swiper-container mb-10">
-        <div class="swiper-wrapper pb-20"></div>
+        <div class="swiper-wrapper pb-24"></div>
 
-        <div class="swiper-pagination space-x-5"></div>
-
-        <!-- <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div> -->
+        <div class="swiper-pagination space-x-5 px-5 py-3"></div>
       </div>
     </div>
+
+    <!-- Footer : Copy this to other pages -->
+    <footer class="bg-indigo-900 text-gray-300 text-center p-10">
+      <h3>StyleCode</h3>
+      <ul class="pt-3 md:flex md:items-center md:justify-center md:space-x-5">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+      </ul>
+      <p class="pt-10 font-light text-xs">&copy; StyleCode 2021</p>
+    </footer>
 
     <script src="./read.js"></script>
   </body>

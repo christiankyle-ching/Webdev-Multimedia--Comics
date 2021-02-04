@@ -2,15 +2,21 @@
 * {
   user-select: none;
 }
+
 :root {
   --sidebar-animation-duration: 500ms;
   --sidebar-link-bg: ;
+}
+
+nav {
+  @apply flex p-4 bg-white shadow-2xl items-center relative z-10;
 }
 
 /* Scrollbar */
 body {
   overflow: overlay;
 }
+
 ::-webkit-scrollbar {
   width: auto;
 }
@@ -34,14 +40,6 @@ body {
 
 .swiper-lazy-preloader {
   z-index: -1 !important;
-}
-
-.swiper-wrapper:hover {
-  cursor: grab;
-}
-
-.swiper-wrapper:active {
-  cursor: grabbing;
 }
 /* #endregion */
 
