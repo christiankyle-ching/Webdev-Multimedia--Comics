@@ -12,8 +12,8 @@ Swiper.use([Pagination]);
 
 // Initialize Swiper Slides
 const slideContainer = document.querySelector("#comicViewer .swiper-wrapper");
-const preloader = document.createElement('div')
-preloader.classList.add('swiper-lazy-preloader')
+const preloader = document.createElement("div");
+preloader.classList.add("swiper-lazy-preloader");
 
 Object.values(comicAssets).forEach((obj, index) => {
   const imageSrc = obj[Object.keys(obj)[0]];
@@ -22,8 +22,8 @@ Object.values(comicAssets).forEach((obj, index) => {
   slideEl.classList.add("swiper-slide");
 
   const imgEl = document.createElement("img");
-  imgEl.classList.add('w-full')
-  imgEl.loading = 'lazy'
+  imgEl.classList.add("w-full");
+  imgEl.loading = "lazy";
   imgEl.src = imageSrc;
   imgEl.alt = "Page " + (index + 1);
 
@@ -36,6 +36,7 @@ Object.values(comicAssets).forEach((obj, index) => {
 const comicViewer = new Swiper("#comicViewer", {
   allowTouchMove: false,
   autoplay: false,
+  autoHeight: true,
   pagination: {
     el: "#comicViewer .swiper-pagination",
     bulletClass: "pagination-item",
@@ -48,17 +49,17 @@ const comicViewer = new Swiper("#comicViewer", {
 });
 
 // Assign Page Numbers
-const currentPage = document.querySelector('.current');
-const totalPages = document.querySelector('.total');
+const currentPage = document.querySelector(".current");
+const totalPages = document.querySelector(".total");
 
-currentPage.innerText = 1
-totalPages.innerText = Object.keys(comicAssets).length
+currentPage.innerText = 1;
+totalPages.innerText = Object.keys(comicAssets).length;
 
 // Event Listener - onSlideChange
 comicViewer.on("slideChange", (swiper) => {
-  currentPage.innerText = swiper.activeIndex + 1
+  currentPage.innerText = swiper.activeIndex + 1;
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
-  })
-})
+    behavior: "smooth",
+  });
+});

@@ -27,31 +27,38 @@ const homeSwiper = new Swiper("#homeSwiper", {
 
 // INIT CHARACTERS
 // Import images first
-import sampleImage1 from "./assets/characters/sample-1.png";
-import sampleImage2 from "./assets/characters/sample-2.png";
+import imgFather from "./assets/characters/father.png";
+import imgKorbie from "./assets/characters/korbie.png";
+import imgPresident from "./assets/characters/president.png";
+import imgDoctor from "./assets/characters/doctor.png";
+import imgNurse from "./assets/characters/nurse.png";
 
-// Define Array of Characters
+// TODO: Define Character Details
 const characters = [
   {
-    name: "Sample Name 1",
-    subtitle: "Role / Subtitle",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae nisi ipsa accusamus quaerat obcaecati, laudantium ipsam dolorum. Amet repudiandae repellat eligendi sunt debitis pariatur quibusdam voluptates doloremque accusamus, saepe hic?",
-    image: sampleImage1,
+    name: "Korbie",
+    description: "The main character of the story.",
+    image: imgKorbie,
   },
   {
-    name: "Sample Name 2",
-    subtitle: "Role / Subtitle",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, non quasi nobis suscipit numquam sit ratione id similique. Quis maxime vitae voluptas, fugiat similique atque tempora sunt ea, fuga veritatis, corporis quas quidem quo at expedita nesciunt deserunt soluta impedit!",
-    image: sampleImage2,
+    name: "Korbie's Father",
+    description: "Father of Korbie",
+    image: imgFather,
   },
   {
-    name: "Sample Name 3",
-    subtitle: "Role / Subtitle",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae nisi ipsa accusamus quaerat obcaecati, laudantium ipsam dolorum. Amet repudiandae repellat eligendi sunt debitis pariatur quibusdam voluptates doloremque accusamus, saepe hic?",
-    image: sampleImage1,
+    name: "President",
+    description: "The president of the country.",
+    image: imgPresident,
+  },
+  {
+    name: "Doctor",
+    description: "The doctor that conducted tests for Korbie.",
+    image: imgDoctor,
+  },
+  {
+    name: "Nurse",
+    description: "Nurse in the hospital that cared for Korbie.",
+    image: imgNurse,
   },
 ];
 
@@ -70,7 +77,7 @@ slideTemplate.classList.add(
 );
 
 const characterImg = document.createElement("img");
-characterImg.classList.add("character-image", "col-span-1");
+characterImg.classList.add("character-image", "col-span-1", "p-5");
 
 const colContent = document.createElement("div");
 colContent.classList.add(
@@ -81,30 +88,17 @@ colContent.classList.add(
   "text-white"
 );
 
-const characterNameEl = document.createElement("h2");
-characterNameEl.classList.add("character-name", "text-2xl", "md:text-4xl");
-const characterSubtitleEl = document.createElement("h4");
-characterSubtitleEl.classList.add(
-  "character-subtitle",
-  "pt-1",
-  "text-lg",
-  "md:text-2xl"
-);
-const characterDescriptionEl = document.createElement("p");
-characterDescriptionEl.classList.add(
-  "character-description",
-  "pt-3",
-  "text-sm",
-  "md:text-base"
-);
+const characterNameEl = document.createElement("h1");
+characterNameEl.classList.add("character-name", "md:text-4xl");
 
-characterDescriptionEl.dataset.swiperParallax = "-50%";
-characterSubtitleEl.dataset.swiperParallax = "-100%";
+const characterDescriptionEl = document.createElement("h4");
+characterDescriptionEl.classList.add("character-description", "pt-3", "font-light");
+
+characterDescriptionEl.dataset.swiperParallax = "-100%";
 characterNameEl.dataset.swiperParallax = "-150%";
 characterImg.dataset.swiperParallax = "-200%";
 
 colContent.appendChild(characterNameEl);
-colContent.appendChild(characterSubtitleEl);
 colContent.appendChild(characterDescriptionEl);
 
 slideTemplate.appendChild(colContent);
@@ -114,10 +108,10 @@ slideTemplate.appendChild(characterImg);
 characters.forEach((c) => {
   const slide = slideTemplate.cloneNode(true);
 
-  slide.querySelector(".character-image").src = c.image;
-  slide.querySelector(".character-name").innerText = c.name;
-  slide.querySelector(".character-subtitle").innerText = c.subtitle;
-  slide.querySelector(".character-description").innerText = c.description;
+  slide.querySelector(".character-image").src = c?.image ?? "";
+  slide.querySelector(".character-name").innerText = c?.name ?? "";
+  slide.querySelector(".character-description").innerText =
+    c?.description ?? "";
 
   characterSwiperSlideContainer.appendChild(slide);
 });
@@ -149,5 +143,5 @@ const settingSwiper = new Swiper("#settingSwiper", {
   navigation: {
     nextEl: "#settingSwiper .swiper-button-next",
     prevEl: "#settingSwiper .swiper-button-prev",
-  }
+  },
 });
