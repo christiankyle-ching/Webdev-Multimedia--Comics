@@ -10,3 +10,7 @@
   white-space: nowrap;
   overflow-x: scroll;
 }
+
+#comicViewer .swiper-wrapper img {
+  width: 100%;
+}

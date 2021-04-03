@@ -75,7 +75,3 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-
-#comicViewer .swiper-wrapper img {
-  @apply w-full;
-}
