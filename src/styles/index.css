@@ -32,6 +32,8 @@
   object-position: top;
   /* TODO: Not working */
   overflow: visible;
+
+  @apply col-span-1 p-5;
 }
 
 #characterSwiper .bg-parallax {
@@ -48,6 +50,22 @@
   background-size: cover;
 }
 
+#characterSwiper .swiper-wrapper > .swiper-slide {
+  @apply grid grid-cols-2 md:grid-cols-3 md:px-20;
+}
+
+.character-name {
+  @apply md:text-4xl;
+}
+
+.character-description {
+  @apply pt-3 font-light;
+}
+
+.col-content {
+  @apply col-span-1 md:col-span-2 p-4 sm:p-10 text-white;
+}
+
 /* Setting Swiper */
 #settingSwiper .swiper-slide {
   width: 60vmin;
@@ -56,4 +74,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#comicViewer .swiper-wrapper img {
+  @apply w-full;
 }

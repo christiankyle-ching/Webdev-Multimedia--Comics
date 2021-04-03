@@ -22,7 +22,6 @@ Object.values(comicAssets).forEach((obj, index) => {
   slideEl.classList.add("swiper-slide");
 
   const imgEl = document.createElement("img");
-  imgEl.classList.add("w-full");
   imgEl.loading = "lazy";
   imgEl.src = imageSrc;
   imgEl.alt = "Page " + (index + 1);

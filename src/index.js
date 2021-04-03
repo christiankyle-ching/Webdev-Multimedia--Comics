@@ -15,18 +15,18 @@ import "swiper/swiper-bundle";
 
 Swiper.use([Autoplay, Navigation, Parallax, EffectCoverflow]);
 
+// Background Swiper
 const homeSwiper = new Swiper("#homeSwiper", {
   direction: "horizontal",
   loop: true,
   allowTouchMove: false,
   autoplay: {
-    delay: 100000,
+    delay: 5000,
     disableOnInteraction: false,
   },
 });
 
-// INIT CHARACTERS
-// Import images first
+// Init: Characters
 import imgFather from "./assets/characters/father.png";
 import imgKorbie from "./assets/characters/korbie.png";
 import imgPresident from "./assets/characters/president.png";
@@ -68,31 +68,19 @@ const characterSwiperSlideContainer = document.querySelector(
 );
 
 const slideTemplate = document.createElement("div");
-slideTemplate.classList.add(
-  "swiper-slide",
-  "grid",
-  "grid-cols-2",
-  "md:grid-cols-3",
-  "md:px-20"
-);
+slideTemplate.classList.add("swiper-slide");
 
 const characterImg = document.createElement("img");
-characterImg.classList.add("character-image", "col-span-1", "p-5");
+characterImg.classList.add("character-image");
 
 const colContent = document.createElement("div");
-colContent.classList.add(
-  "col-span-1",
-  "md:col-span-2",
-  "p-4",
-  "sm:p-10",
-  "text-white"
-);
+colContent.classList.add("col-content");
 
 const characterNameEl = document.createElement("h1");
-characterNameEl.classList.add("character-name", "md:text-4xl");
+characterNameEl.classList.add("character-name");
 
 const characterDescriptionEl = document.createElement("h4");
-characterDescriptionEl.classList.add("character-description", "pt-3", "font-light");
+characterDescriptionEl.classList.add("character-description");
 
 characterDescriptionEl.dataset.swiperParallax = "-100%";
 characterNameEl.dataset.swiperParallax = "-150%";
@@ -116,32 +104,36 @@ characters.forEach((c) => {
   characterSwiperSlideContainer.appendChild(slide);
 });
 
+// Character Swiper
 const characterSwiper = new Swiper("#characterSwiper", {
   direction: "horizontal",
   grabCursor: true,
   parallax: true,
   autoplay: {
-    delay: 10000,
+    delay: 7500,
     disableOnInteraction: true,
   },
   loop: true,
 });
 
-// INIT SETTING SWIPER
-const settingSwiper = new Swiper("#settingSwiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  coverflowEffect: {
-    rotate: 50,
-    stretch: 0,
-    depth: 100,
-    modifier: 1,
-    slideShadows: true,
-  },
-  navigation: {
-    nextEl: "#settingSwiper .swiper-button-next",
-    prevEl: "#settingSwiper .swiper-button-prev",
-  },
-});
+/**
+ * FIXME: Settings Swiper
+ * Should I remove swiper for setting of the story?
+ */
+// const settingSwiper = new Swiper("#settingSwiper", {
+//   effect: "coverflow",
+//   grabCursor: true,
+//   centeredSlides: true,
+//   slidesPerView: "auto",
+//   coverflowEffect: {
+//     rotate: 50,
+//     stretch: 0,
+//     depth: 100,
+//     modifier: 1,
+//     slideShadows: true,
+//   },
+//   navigation: {
+//     nextEl: "#settingSwiper .swiper-button-next",
+//     prevEl: "#settingSwiper .swiper-button-prev",
+//   },
+// });

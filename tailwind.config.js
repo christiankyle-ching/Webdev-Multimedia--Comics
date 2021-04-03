@@ -1,6 +1,6 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  purge: false,
+  darkMode: false,
   theme: {
     container: {
       center: true,
@@ -9,8 +9,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      ringWidth: ['hover']
+      ringWidth: ["hover"],
     },
   },
   plugins: [],
-}
+};
